@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>16 Skills That Will Pay You Forever | Bloomingage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .cursive-logo { font-family: 'Pacifico', cursive; }
+    @keyframes bounceIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      60% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    .bounce-in {
+      animation: bounceIn 0.8s cubic-bezier(0.4,0,0.2,1) both;
+    }
+    .skill-card:hover {
+      transform: translateY(-8px) scale(1.04) rotate(-1deg);
+      box-shadow: 0 8px 32px 0 rgba(161,134,111,0.18), 0 1.5px 8px 0 rgba(161,134,111,0.12);
+      transition: all 0.2s;
+      border: 2px solid #a1866f;
+    }
+    .skill-icon {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    .checked-skill {
+      background-color: #a1866f !important;
+      color: #fffaf6 !important;
+      text-decoration: line-through;
+      transition: background 0.3s, color 0.3s;
+    }
+    .check-anim {
+      animation: checkAnim 0.4s;
+    }
+    @keyframes checkAnim {
+      0% { background: #fffaf6; color: #6b4f36; }
+      60% { background: #e9e3db; color: #a1866f; }
+      100% { background: #a1866f; color: #fffaf6; }
+    }
+  </style>
+</head>
+<body class="bg-[#f8f5f2] text-[#3e2c23] min-h-screen">
+  <!-- Nav Bar -->
+  <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <div class="cursive-logo text-3xl text-[#a1866f]">Bloomingage</div>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+        <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+        <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+        <a href="stories.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-10">
+    <h1 class="text-4xl md:text-5xl text-[#6b4f36] font-bold mb-4 text-center bounce-in" data-aos="fade-down">16 Skills That Will Pay You Forever</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Emotional & Interpersonal Intelligence -->
+      <div class="skill-card bg-[#fffaf6] rounded-2xl shadow-lg p-6 bounce-in" data-aos="fade-up" data-aos-delay="50">
+        <h2 class="text-xl text-[#a1866f] font-semibold mb-4 text-center">Emotional & Interpersonal</h2>
+        <ul class="space-y-3 text-[#6b4f36]">
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Staying calm under pressure
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Staying positive and optimistic
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Listening to understand, not just to reply
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Building strong relationships
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Being easy to work with
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Having emotional intelligence and empathy
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Resolving conflicts peacefully
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Setting boundaries with toxic people
+          </li>
+        </ul>
+      </div>
+      <!-- Communication & Expression -->
+      <div class="skill-card bg-[#e9e3db] rounded-2xl shadow-lg p-6 bounce-in" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="text-xl text-[#a1866f] font-semibold mb-4 text-center">Communication & Expression</h2>
+        <ul class="space-y-3 text-[#6b4f36]">
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Asking for help when you need it
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Expressing your thoughts clearly
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Selling, negotiating, and persuading
+          </li>
+        </ul>
+      </div>
+      <!-- Personal Growth & Decision Making -->
+      <div class="skill-card bg-[#fffaf6] rounded-2xl shadow-lg p-6 bounce-in" data-aos="fade-up" data-aos-delay="150">
+        <h2 class="text-xl text-[#a1866f] font-semibold mb-4 text-center">Personal Growth & Decisions</h2>
+        <ul class="space-y-3 text-[#6b4f36]">
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Thinking on your feet
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Being decisive
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Continuously learning and developing yourself
+          </li>
+        </ul>
+      </div>
+      <!-- Productivity & Practical Skills -->
+      <div class="skill-card bg-[#e9e3db] rounded-2xl shadow-lg p-6 bounce-in" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="text-xl text-[#a1866f] font-semibold mb-4 text-center">Productivity & Practical</h2>
+        <ul class="space-y-3 text-[#6b4f36]">
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Managing your time well
+          </li>
+          <li class="skill-list-item cursor-pointer flex items-center rounded-lg px-2 py-1 transition" tabindex="0">
+            <input type="checkbox" class="mr-3 accent-[#a1866f] w-5 h-5 transition" tabindex="-1">
+            Managing your money smartly
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="toolkit.html" class="inline-block px-8 py-3 rounded-full bg-[#a1866f] text-white font-bold shadow-lg transition-all duration-200 hover:bg-[#6b4f36] hover:scale-105">Explore More Tools</a>
+    </div>
+  </main>
+
+  <footer class="bg-[#6b4f36] text-white text-center py-6 rounded-t-2xl mt-16 shadow-lg w-full">
+    <div class="container mx-auto px-4">
+      <p class="mb-2 font-semibold">© 2025 Blooming Digital Wellness</p>
+      <p>
+        <a href="mailto:info@bloomingwellness.com" class="underline hover:text-[#e9e3db] transition">Contact</a>
+        <span class="mx-2">|</span>
+        <a href="#" class="underline hover:text-[#e9e3db] transition">Privacy Policy</a>
+        <span class="mx-2">|</span>
+        <a href="#" class="underline hover:text-[#e9e3db] transition">Instagram</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+
+    // Make skills checkable with animation
+    document.querySelectorAll('.skill-list-item').forEach(item => {
+      const checkbox = item.querySelector('input[type="checkbox"]');
+      item.addEventListener('click', function(e) {
+        // Prevent double toggling if checkbox itself is clicked
+        if (e.target.tagName === 'INPUT') return;
+        checkbox.checked = !checkbox.checked;
+        item.classList.toggle('checked-skill', checkbox.checked);
+        item.classList.add('check-anim');
+        setTimeout(() => item.classList.remove('check-anim'), 400);
+      });
+      checkbox.addEventListener('change', function() {
+        item.classList.toggle('checked-skill', checkbox.checked);
+        item.classList.add('check-anim');
+        setTimeout(() => item.classList.remove('check-anim'), 400);
+      });
+      // Keyboard accessibility
+      item.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          checkbox.checked = !checkbox.checked;
+          item.classList.toggle('checked-skill', checkbox.checked);
+          item.classList.add('check-anim');
+          setTimeout(() => item.classList.remove('check-anim'), 400);
+        }
+      });
+    });
+
+    // Show a toast when all skills in a card are checked
+    document.querySelectorAll('.skill-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (!e.target.classList.contains('skill-list-item') && e.target.tagName !== 'INPUT') return;
+        const all = card.querySelectorAll('.skill-list-item input[type="checkbox"]');
+        const checked = card.querySelectorAll('.skill-list-item input[type="checkbox"]:checked');
+        if (all.length && all.length === checked.length) {
+          showToast("You checked all skills in this section! 🎉");
+        }
+      });
+    });
+
+    function showToast(msg) {
+      let toast = document.createElement('div');
+      toast.textContent = msg;
+      toast.className = "fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-[#a1866f] text-white px-6 py-3 rounded-full shadow-lg text-lg z-50 animate-bounce";
+      document.body.appendChild(toast);
+      setTimeout(() => { toast.remove(); }, 2200);
+    }
+  </script>
+</body>
+</html>

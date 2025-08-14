@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wellness Workshop</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Pacifico for logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+      .cursive-logo { font-family: 'Pacifico', cursive; }
+    </style>
+</head>
+<body class="bg-[#f8f5f2] text-[#3e2c23] min-h-screen">
+    <!-- Nav Bar -->
+    <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8">
+      <div class="container mx-auto flex items-center justify-between px-4">
+        <div class="cursive-logo text-3xl">Bloomingage</div>
+        <nav class="space-x-6">
+          <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+          <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+          <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+          <a href="stories.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8 flex flex-col gap-10">
+
+      <!-- Welcome Card OUTSIDE the slideshow -->
+      <div class="bg-[#fffaf6] rounded-2xl shadow-lg p-8 flex flex-col items-center text-center mb-4">
+        <h2 class="text-2xl md:text-3xl text-[#6b4f36] mb-4 font-normal">Welcome to the Digital Wellness Workshop</h2>
+        <p class="text-lg mb-6 font-normal">
+          Helping young people develop awareness and skills to navigate social media responsibly and mindfully.
+        </p>
+          <!--  <a href="#" class="inline-block px-6 py-3 rounded-full border-2 border-[#a1866f] bg-white text-[#a1866f] font-semibold transition hover:bg-[#a1866f] hover:text-white shadow">
+          Access Resources Online
+        </a>
+      </div>
+
+   Slideshow STARTS here -->
+      <div id="slides-container" class="relative">
+        <!-- Slides -->
+    
+        <div class="workshop-slide bg-[#fffaf6] rounded-2xl shadow-lg p-8" style="display:none;">
+          <h2 class="text-2xl md:text-3xl text-[#6b4f36] mb-4 font-normal">The Emotional Impact of Social Media</h2>
+          <ul class="list-disc list-inside space-y-2 text-lg font-normal text-left mx-auto max-w-xl">
+            <li>Understanding "red flag feelings" like overstimulation.</li>
+            <li>Recognizing how self-comparison affects mental health.</li>
+            <li>Tracking emotional patterns after scrolling.</li>
+          </ul>
+        </div>
+        <div class="workshop-slide bg-[#fffaf6] rounded-2xl shadow-lg p-8" style="display:none;">
+          <h2 class="text-2xl md:text-3xl text-[#6b4f36] mb-4 font-normal">Recognizing Triggers and Building Resilience</h2>
+          <ul class="list-disc list-inside space-y-2 text-lg font-normal text-left mx-auto max-w-xl">
+            <li>Identifying personal triggers.</li>
+            <li>Strategies to pause, reflect, and reset.</li>
+            <li>Mindful content consumption tips.</li>
+          </ul>
+        </div>
+        <div class="workshop-slide bg-[#fffaf6] rounded-2xl shadow-lg p-8" style="display:none;">
+          <h2 class="text-2xl md:text-3xl text-[#6b4f36] mb-4 font-normal">Digital Footprints and Privacy Awareness</h2>
+          <ul class="list-disc list-inside space-y-2 text-lg font-normal text-left mx-auto max-w-xl">
+            <li>Understanding digital footprints and their impact.</li>
+            <li>Protecting online privacy and reputation.</li>
+            <li>Practicing safe online habits.</li>
+          </ul>
+        </div>
+        <div class="workshop-slide bg-[#fffaf6] rounded-2xl shadow-lg p-8" style="display:none;">
+          <h2 class="text-2xl md:text-3xl text-[#6b4f36] mb-4 font-normal">Critical Thinking for Evaluating Content</h2>
+          <ul class="list-disc list-inside space-y-2 text-lg font-normal text-left mx-auto max-w-xl">
+            <li>Spotting misinformation.</li>
+            <li>Recognizing bias and intent in posts.</li>
+            <li>Developing media literacy skills.</li>
+          </ul>
+        </div>
+        <div class="workshop-slide bg-[#fffaf6] rounded-2xl shadow-lg p-8" style="display:none;">
+          <h2 class="text-2xl md:text-3xl text-[#6b4f36] mb-4 font-normal">Pause, Reflect, and Reset</h2>
+          <ul class="list-disc list-inside space-y-2 text-lg font-normal text-left mx-auto max-w-xl">
+            <li>Simple techniques to pause and regain focus.</li>
+            <li>Creating a personal digital wellness plan.</li>
+            <li>Tips for integrating breaks into your online habits.</li>
+          </ul>
+        </div>
+   
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between mt-8">
+          <button id="prevSlide" class="px-6 py-2 rounded-full bg-[#e9e3db] text-[#6b4f36] font-semibold shadow hover:bg-[#d6c7b7] transition hidden">Previous</button>
+          <button id="nextSlide" class="px-6 py-2 rounded-full bg-[#a1866f] text-white font-semibold shadow hover:bg-[#6b4f36] transition">Next</button>
+        </div>
+        <div class="text-center mt-4 text-[#a1866f] font-semibold">
+          <span id="slideIndicator">Slide 1 of 7</span>
+        </div>
+      </div>
+    </div>
+    <!-- One-on-One Button (fixed at bottom) -->
+<button id="openChatForm"
+  class="fixed bottom-8 right-8 z-50 px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow-xl hover:bg-[#6b4f36] transition-all text-lg">
+  Request Workshop
+</button>
+
+<!-- One-on-One Form Modal -->
+<div id="chatFormModal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+  <div class="bg-[#fffaf6] rounded-2xl shadow-2xl p-8 w-full max-w-md relative animate-fadeInUp">
+    <button id="closeChatForm" class="absolute top-3 right-4 text-2xl text-[#a1866f] hover:text-[#6b4f36]">&times;</button>
+    <h2 class="text-2xl text-[#6b4f36] font-semibold mb-4 text-center">Let's Chat</h2>
+    <form id="oneOnOneForm" class="flex flex-col gap-4">
+      <label class="text-[#3e2c23] font-semibold" for="name">Your Name</label>
+      <input id="name" name="name" required class="rounded-xl border border-[#e9e3db] p-3 focus:outline-none focus:ring-2 focus:ring-[#a1866f]" placeholder="First name or nickname">
+
+      <label class="text-[#3e2c23] font-semibold" for="email">Email</label>
+      <input id="email" name="email" type="email" required class="rounded-xl border border-[#e9e3db] p-3 focus:outline-none focus:ring-2 focus:ring-[#a1866f]" placeholder="you@email.com">
+
+      <label class="text-[#3e2c23] font-semibold" for="needs">What do you need?</label>
+      <div class="flex flex-col gap-2">
+        <label class="inline-flex items-center">
+          <input type="checkbox" name="needs" value="one-on-one" class="accent-[#a1866f] mr-2">
+          One-on-one consultation
+        </label>
+        <label class="inline-flex items-center">
+          <input type="checkbox" name="needs" value="handouts" class="accent-[#a1866f] mr-2">
+          Handouts
+        </label>
+        <label class="inline-flex items-center">
+          <input type="checkbox" name="needs" value="resources" class="accent-[#a1866f] mr-2">
+          Resources
+        </label>
+      </div>
+
+      <label class="text-[#3e2c23] font-semibold" for="message">Anything else you'd like to share?</label>
+      <textarea id="message" name="message" class="rounded-xl border border-[#e9e3db] p-3 focus:outline-none focus:ring-2 focus:ring-[#a1866f] resize-none" rows="3" placeholder="Tell us more (optional)"></textarea>
+
+      <button type="submit" class="mt-2 px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow hover:bg-[#6b4f36] transition-all">Send</button>
+    </form>
+    <div id="formSuccess" class="hidden text-green-600 text-center mt-4 font-semibold">Thank you for reaching out! 💬</div>
+  </div>
+</div>
+
+<!-- Floating Animation Balls -->
+<div class="fixed bottom-12 right-12 z-10 pointer-events-none">
+  <div class="shadow-xl rounded-full bg-[#a1866f] opacity-70 w-20 h-20 floating-ball" style="animation-delay: 0s;"></div>
+  <div class="shadow-xl rounded-full bg-[#a1866f] opacity-40 w-12 h-12 floating-ball" style="position:absolute; bottom:60px; right:100px; animation-delay: 1.5s;"></div>
+  <div class="shadow-xl rounded-full bg-[#a1866f] opacity-30 w-32 h-32 floating-ball" style="position:absolute; bottom:120px; right:-60px; animation-delay: 3s;"></div>
+  <div class="shadow-xl rounded-full bg-[#a1866f] opacity-20 w-10 h-10 floating-ball" style="position:absolute; bottom:10px; right:80px; animation-delay: 2.2s;"></div>
+  <div class="shadow-xl rounded-full bg-[#a1866f] opacity-50 w-16 h-16 floating-ball" style="position:absolute; bottom:100px; right:40px; animation-delay: 4s;"></div>
+</div>
+<style>
+  @keyframes calmFloat {
+    0% { transform: translateY(0) scale(1);}
+    50% { transform: translateY(-24px) scale(1.05);}
+    100% { transform: translateY(0) scale(1);}
+  }
+  .floating-ball {
+    box-shadow: 0 12px 32px 0 rgba(161,134,111,0.25), 0 2px 8px 0 rgba(161,134,111,0.12);
+    animation: calmFloat 6s ease-in-out infinite;
+    transition: box-shadow 0.3s;
+  }
+</style>
+
+<script>
+      const slides = document.querySelectorAll('.workshop-slide');
+      const prevBtn = document.getElementById('prevSlide');
+      const nextBtn = document.getElementById('nextSlide');
+      const indicator = document.getElementById('slideIndicator');
+      let current = 0;
+
+      function showSlide(idx) {
+        slides.forEach((slide, i) => {
+          slide.style.display = i === idx ? 'block' : 'none';
+        });
+        prevBtn.style.display = idx === 0 ? 'none' : '';
+        nextBtn.textContent = idx === slides.length - 1 ? 'Finish' : 'Next';
+        indicator.textContent = `Slide ${idx + 1} of ${slides.length}`;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        if (current > 0) current--;
+        showSlide(current);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (current < slides.length - 1) {
+          current++;
+          showSlide(current);
+        } else {
+          // Optionally, redirect or close
+          current = 0;
+          showSlide(current);
+        }
+      });
+
+      showSlide(current);
+    </script>
+<script>
+const openBtn = document.getElementById('openChatForm');
+const modal = document.getElementById('chatFormModal');
+const closeBtn = document.getElementById('closeChatForm');
+const form = document.getElementById('oneOnOneForm');
+const successMsg = document.getElementById('formSuccess');
+
+openBtn.onclick = () => { modal.classList.remove('hidden'); };
+closeBtn.onclick = () => { modal.classList.add('hidden'); successMsg.classList.add('hidden'); form.reset(); };
+modal.onclick = e => { if(e.target === modal) { modal.classList.add('hidden'); successMsg.classList.add('hidden'); form.reset(); } };
+form.onsubmit = e => {
+  e.preventDefault();
+  form.classList.add('hidden');
+  successMsg.classList.remove('hidden');
+  setTimeout(() => {
+    modal.classList.add('hidden');
+    form.classList.remove('hidden');
+    successMsg.classList.add('hidden');
+    form.reset();
+  }, 2000);
+};
+</script>
+</body>
+</html>

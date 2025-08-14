@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Detox Plan | Bloomingage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pacifico for logo -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .cursive-logo { font-family: 'Pacifico', cursive; }
+    .deep-shadow {
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 8px 12px rgba(0, 0, 0, 0.1);
+    }
+    .bg-brown-50 { background-color: #fffaf6; }
+    .bg-brown-100 { background-color: #f8f5f2; }
+    .bg-brown-200 { background-color: #e9e3db; }
+    .text-brown-800 { color: #6b4f36; }
+    .text-brown-600 { color: #a1866f; }
+    .text-brown-700 { color: #8d7158; }
+    .fade-in { animation: fadeIn 0.8s; }
+    @keyframes fadeIn { from { opacity: 0;} to { opacity: 1;} }
+    .step-card { transition: box-shadow 0.2s, transform 0.2s; }
+    .step-card.selected, .step-card:hover {
+      box-shadow: 0 8px 32px 0 rgba(161,134,111,0.18), 0 1.5px 8px 0 rgba(161,134,111,0.12);
+      transform: scale(1.03) translateY(-4px);
+      border: 2px solid #a1866f;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-brown-100 flex flex-col items-center p-6">
+  <!-- Nav Bar -->
+  <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8 w-full">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <div class="cursive-logo text-3xl text-[#a1866f]">Bloomingage</div>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+        <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+        <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+        <a href="stories.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-1 flex flex-col items-center w-full">
+    <section class="text-center mb-8" data-aos="fade-down">
+      <h1 class="text-4xl font-bold text-brown-800 mb-2">Digital Detox Plan</h1>
+      <p class="text-brown-600 mt-2 text-lg">Pick a step to start your break from social media. You can always try another!</p>
+    </section>
+
+    <section class="w-full max-w-2xl">
+      <div id="steps" class="grid grid-cols-1 gap-6">
+        <!-- Steps will be injected here -->
+      </div>
+      <div id="step-actions" class="mt-10 text-center hidden fade-in">
+        <div id="step-detail" class="bg-brown-50 rounded-2xl shadow-xl p-6 mb-6 text-brown-700 text-lg"></div>
+        <button id="try-another" class="inline-block px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg transition-all duration-200 hover:bg-[#6b4f36] hover:scale-105 subtle-float mr-4">Try Another Step</button>
+        <a href="journal.html" class="inline-block px-6 py-3 rounded-full bg-[#6b4f36] text-white font-semibold shadow-lg transition-all duration-200 hover:bg-[#a1866f] hover:scale-105 subtle-float">Reflect in Journal</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#6b4f36] text-white text-center py-6 rounded-t-2xl mt-16 shadow-lg w-full">
+    <div class="container mx-auto px-4">
+      <p class="mb-2 font-semibold">© 2025 Blooming Digital Wellness</p>
+      <p>
+        <a href="mailto:info@bloomingwellness.com" class="underline hover:text-[#e9e3db] transition">Contact</a>
+        <span class="mx-2">|</span>
+        <a href="#" class="underline hover:text-[#e9e3db] transition">Privacy Policy</a>
+        <span class="mx-2">|</span>
+        <a href="#" class="underline hover:text-[#e9e3db] transition">Instagram</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+
+    const detoxSteps = [
+      {
+        title: "Assess Your Current Usage",
+        summary: "Find out which apps you use most and how much time you spend on them.",
+        detail: `
+          <ul class="list-disc list-inside text-left">
+            <li>Check your phone's screen time or app usage stats.</li>
+            <li>Notice which apps take up most of your attention.</li>
+            <li>Awareness is the first step to change!</li>
+          </ul>
+        `
+      },
+      {
+        title: "Set Realistic Goals",
+        summary: "Start small—reduce your usage by 15 minutes a day or set a timer.",
+        detail: `
+          <ul class="list-disc list-inside text-left">
+            <li>Pick a realistic target (e.g., 15 minutes less per day).</li>
+            <li>Gradually increase your break time as you get comfortable.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Implement Short Breaks",
+        summary: "Try the 20-20-20 rule or schedule 5-10 minute pauses.",
+        detail: `
+          <ul class="list-disc list-inside text-left">
+            <li>Every 20 minutes, look at something 20 feet away for 20 seconds.</li>
+            <li>Set alarms or app timers for short breaks.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Create Alternatives",
+        summary: "Replace scrolling with reading, walking, or a hobby you enjoy.",
+        detail: `
+          <ul class="list-disc list-inside text-left">
+            <li>Read a chapter of a book.</li>
+            <li>Take a short walk or stretch.</li>
+            <li>Practice a hobby (drawing, cooking, music, etc.).</li>
+          </ul>
+        `
+      },
+      {
+        title: "Reflect on Benefits",
+        summary: "Notice how you feel after each break—journal your mood and focus.",
+        detail: `
+          <ul class="list-disc list-inside text-left">
+            <li>Write down how you feel after breaks.</li>
+            <li>Did you feel more focused or lighter?</li>
+            <li>Look for patterns of improved well-being.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Gradual Reduction",
+        summary: "Extend breaks to 30 minutes at lunch or an hour before bed.",
+        detail: `
+          <ul class="list-disc list-inside text-left">
+            <li>Try 30 minutes of no social media during lunch.</li>
+            <li>Go one hour before bed without checking apps.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Leverage Technology",
+        summary: "Use app limits, do-not-disturb, and turn off non-essential notifications.",
+        detail: `
+          <ul class="list-disc list-inside text-left">
+            <li>Set app limits in your phone settings.</li>
+            <li>Schedule “do not disturb” hours.</li>
+            <li>Turn off notifications that aren't important.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Monitor Progress",
+        summary: "Check your screen time and celebrate milestones!",
+        detail: `
+          <ul class="list-disc list-inside text-left">
+            <li>Review your screen time data weekly.</li>
+            <li>Celebrate when you reach your goals!</li>
+          </ul>
+        `
+      },
+      {
+        title: "Social Media-Free Zones",
+        summary: "Make dinner, mornings, or workouts social-media-free.",
+        detail: `
+          <ul class="list-disc list-inside text-left">
+            <li>No social media at family meals.</li>
+            <li>Keep mornings and workouts app-free.</li>
+          </ul>
+        `
+      },
+      {
+        title: "Get Support",
+        summary: "Ask friends or family to join you and keep each other accountable.",
+        detail: `
+          <ul class="list-disc list-inside text-left">
+            <li>Share your goals with someone you trust.</li>
+            <li>Encourage each other to take breaks together.</li>
+          </ul>
+        `
+      }
+    ];
+
+    const stepsDiv = document.getElementById('steps');
+    const stepActions = document.getElementById('step-actions');
+    const stepDetail = document.getElementById('step-detail');
+    const tryAnotherBtn = document.getElementById('try-another');
+
+    let selectedStep = null;
+
+    function renderSteps() {
+      stepsDiv.innerHTML = '';
+      detoxSteps.forEach((step, idx) => {
+        const card = document.createElement('button');
+        card.type = "button";
+        card.className = `step-card bg-brown-50 rounded-2xl shadow-xl p-6 mb-2 text-left text-brown-800 font-semibold transition-all duration-300 hover:bg-brown-200 focus:outline-none w-full fade-in`;
+        card.setAttribute('data-aos', 'fade-up');
+        card.setAttribute('tabindex', 0);
+        card.innerHTML = `
+          <div class="text-xl font-bold mb-2">${step.title}</div>
+          <div class="text-brown-700 text-base">${step.summary}</div>
+        `;
+        card.onclick = () => selectStep(idx, card);
+        stepsDiv.appendChild(card);
+      });
+    }
+
+    function selectStep(idx, card) {
+      // Remove previous selection
+      document.querySelectorAll('.step-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedStep = idx;
+      stepDetail.innerHTML = `<div class="text-xl font-bold mb-4">${detoxSteps[idx].title}</div>${detoxSteps[idx].detail}`;
+      stepActions.classList.remove('hidden');
+      stepActions.classList.add('fade-in');
+      // Scroll to actions
+      stepActions.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    tryAnotherBtn.onclick = () => {
+      stepActions.classList.add('hidden');
+      selectedStep = null;
+      document.querySelectorAll('.step-card').forEach(c => c.classList.remove('selected'));
+      window.scrollTo({ top: stepsDiv.offsetTop - 40, behavior: 'smooth' });
+    };
+
+    renderSteps();
+  </script>
+</body>
+</html>

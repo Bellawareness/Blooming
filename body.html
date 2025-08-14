@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Body Image in this Bloomingage</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pacifico for logo -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .cursive-logo { font-family: 'Pacifico', cursive; }
+    .subtle-float { animation: subtleFloat 3.5s ease-in-out infinite alternate; }
+    @keyframes subtleFloat { 0% { transform: translateY(0);} 100% { transform: translateY(-6px);} }
+  </style>
+</head>
+<body class="bg-[#f8f5f2] text-[#3e2c23]">
+  <!-- Nav Bar -->
+  <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <div class="cursive-logo text-3xl">Bloomingage</div>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+        <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+        <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+        <a href="stories.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-12">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-8">
+      <div class="max-w-xl" data-aos="fade-right">
+        <h1 class="text-4xl md:text-5xl text-[#6b4f36] mb-6 font-normal">Body Image & Media Literacy</h1>
+        <p class="text-lg mb-8 font-normal">
+          Body image is how you think and feel about your body. It's shaped by media, peers, family, and your own thoughts. Positive body image is about respect and appreciation for your body.
+        </p>
+      </div>
+      <!-- Placeholder for hero image or video -->
+      <img src="images/body-hero.jpg" alt="Body Image Hero" class="w-full max-w-md h-auto rounded-3xl shadow-lg object-cover aspect-[4/3] bg-[#e9e3db]" data-aos="fade-left">
+    </div>
+  </section>
+
+  <!-- Main Content Cards -->
+  <section class="py-12">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- Body Image Overview -->
+      <div class="bg-[#fffaf6] rounded-2xl shadow-xl p-8 flex flex-col gap-4 items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up">
+        <img src="images/body-awareness.jpg" alt="Body Awareness" class="w-full max-w-[180px] rounded-xl mb-4 object-cover aspect-[4/3] bg-[#e9e3db]">
+        <h2 class="text-2xl text-[#a1866f] mb-2 font-semibold">Understanding Body Image</h2>
+        <ul class="list-disc list-inside text-base mb-2 text-left">
+          <li>Body image concerns are common during adolescence.</li>
+          <li>Negative body image can affect self-esteem and mental health.</li>
+          <li>Positive body image is about respect and appreciation for your body.</li>
+        </ul>
+      </div>
+      <!-- Media Literacy Tips -->
+      <div class="bg-[#fffaf6] rounded-2xl shadow-xl p-8 flex flex-col gap-4 items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/media-literacy.jpg" alt="Media Literacy" class="w-full max-w-[180px] rounded-xl mb-4 object-cover aspect-[4/3] bg-[#e9e3db]">
+        <h2 class="text-2xl text-[#a1866f] mb-2 font-semibold">Media Literacy Tips</h2>
+        <ul class="list-disc list-inside text-base mb-2 text-left">
+          <li>Most images are edited and filtered.</li>
+          <li>Question unrealistic beauty standards.</li>
+          <li>Follow diverse and body-positive content creators.</li>
+          <li>Take breaks from social media when needed.</li>
+        </ul>
+        <a href="https://mediasmarts.ca/body-image" target="_blank"
+           class="inline-block mt-2 px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg transition-all duration-200 hover:bg-[#6b4f36] hover:scale-105 subtle-float">
+          Get More Tips
+        </a>
+      </div>
+      <!-- Professional Support -->
+      <div class="bg-[#fffaf6] rounded-2xl shadow-xl p-8 flex flex-col gap-4 items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/support.jpg" alt="Professional Support" class="w-full max-w-[180px] rounded-xl mb-4 object-cover aspect-[4/3] bg-[#e9e3db]">
+        <h2 class="text-2xl text-[#a1866f] mb-2 font-semibold">Professional Support</h2>
+        <ul class="list-disc list-inside text-base mb-2 text-left">
+          <li>If you're struggling with severe body image issues or eating concerns, please reach out to:</li>
+          <li>School counselor or therapist</li>
+          <li>
+            <a href="https://www.nationaleatingdisorders.org/help-support/contact-helpline" target="_blank" class="underline text-[#a1866f] hover:text-[#6b4f36]">National Eating Disorders Association Helpline</a>
+          </li>
+          <li>Crisis Text Line: Text <b>HOME</b> to <b>741741</b></li>
+          <li>Remember: Seeking help is a sign of strength, not weakness.</li>
+        </ul>
+      </div>
+      <!-- Book Recommendations -->
+      <div class="bg-[#fffaf6] rounded-2xl shadow-xl p-8 flex flex-col gap-4 items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/books.jpg" alt="Book Recommendations" class="w-full max-w-[180px] rounded-xl mb-4 object-cover aspect-[4/3] bg-[#e9e3db]">
+        <h2 class="text-2xl text-[#a1866f] mb-2 font-semibold">Book Recommendations</h2>
+        <ul class="list-disc list-inside text-base mb-2 text-left">
+          <li>"The Body Is Not an Apology" by Sonya Renee Taylor</li>
+          <li>"Body Positive Power" by Megan Jayne Crabbe</li>
+          <li>"The Self-Compassion Workbook for Teens" by Karen Bluth</li>
+          <li>"Free to Be Me" by Thomas Cash</li>
+        </ul>
+        <a href="https://bookshop.org/lists/body-image-self-esteem-for-teens" target="_blank"
+           class="inline-block mt-2 px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg transition-all duration-200 hover:bg-[#6b4f36] hover:scale-105 subtle-float">
+          View More Books
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#6b4f36] text-white text-center py-6 rounded-t-2xl mt-16 shadow-lg">
+    <div class="container mx-auto px-4">
+      <p class="mb-2 font-semibold">© 2025 Blooming Digital Wellness</p>
+      <p>
+        <a href="mailto:info@bloomingwellness.com" class="underline hover:text-[#e9e3db] transition">Contact</a>
+        <span class="mx-2">|</span>
+        <a href="#" class="underline hover:text-[#e9e3db] transition">Privacy Policy</a>
+        <span class="mx-2">|</span>
+        <a href="#" class="underline hover:text-[#e9e3db] transition">Instagram</a>
+      </p>
+    </div>
+  </footer>
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
+</body>
+</html>

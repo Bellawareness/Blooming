@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toolkit for Teens</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pacifico for logo -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .cursive-logo { font-family: 'Pacifico', cursive; }
+    .floating { animation: floating 4s ease-in-out infinite alternate; }
+    @keyframes floating { 0% { transform: translateY(0);} 100% { transform: translateY(-16px);} }
+    .subtle-float {
+      animation: subtleFloat 3.5s ease-in-out infinite alternate;
+    }
+    @keyframes subtleFloat {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-6px);}
+    }
+  </style>
+</head>
+<body class="bg-[#f8f5f2] text-[#3e2c23]">
+  <!-- Header -->
+  <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <div class="cursive-logo text-3xl">Bloomingage</div>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+        <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+        <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+        <a href="stories.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Intro Section -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto bg-[#fffaf6] rounded-2xl shadow-lg p-8 text-center">
+        <h2 class="text-3xl text-[#6b4f36] mb-6 font-normal">Why This Matters</h2>
+        <p class="text-lg text-[#6b4f36] font-normal">
+         Understanding your emotions, knowing your triggers, and learning to pause or step back when needed are life skills that can help you stay balanced and in control online.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Toolkit Cards Section -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-center text-3xl text-[#6b4f36] mb-10 font-normal">Your Digital Wellness Toolkit</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Card 1: Emotional Check-In Tool -->
+        <div class="bg-[#a1866f] rounded-2xl shadow-xl p-6 flex flex-col gap-3 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate__animated animate__fadeInUp max-w-sm mx-auto" data-aos="fade-up">
+          <h3 class="text-2xl text-[#fffaf6] mb-2 font-semibold">Check-In Tool</h3>
+          <span class="italic text-[#fffaf6]">"How are you feeling today?" "What triggered these feelings?" "What could you do to improve your mood?"</span>
+          <a href="quiz.html" class="inline-block mt-2 px-6 py-3 rounded-full bg-[#fffaf6] text-[#a1866f] font-semibold shadow-lg transition-all duration-200 hover:bg-[#e9e3db] hover:scale-105 subtle-float">Try the Quiz</a>
+        </div>
+        <!-- Card 2: Mood Journal Template -->
+        <div class="bg-[#6b4f36] rounded-2xl shadow-xl p-6 flex flex-col gap-3 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate__animated animate__fadeInUp max-w-sm mx-auto" data-aos="fade-up" data-aos-delay="50">
+          <h3 class="text-2xl text-[#fffaf6] mb-2 font-semibold">Mood Journal</h3>
+          <span class="text-[#fffaf6]">Space to log feelings, social media activities, and prompts like: <span class="italic">"What lifted your spirits?" "What brought you down?"</span></span>
+          <a href="journal.html" class="inline-block mt-2 px-6 py-3 rounded-full bg-[#fffaf6] text-[#6b4f36] font-semibold shadow-lg transition-all duration-200 hover:bg-[#e9e3db] hover:scale-105 subtle-float">Email your Journal</a>
+        </div>
+        <!-- Card 3: Red Flag Recognition Guide -->
+        <div class="bg-[#e9e3db] rounded-2xl shadow-xl p-6 flex flex-col gap-3 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate__animated animate__fadeInUp max-w-sm mx-auto" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-2xl text-[#a1866f] mb-2 font-semibold">Red Flag Recognition Guide</h3>
+          <span class="text-[#6b4f36]">A visual guide showing signs of distress </span>
+          <a href="redflags.html" class="inline-block mt-2 px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg transition-all duration-200 hover:bg-[#6b4f36] hover:scale-105 subtle-float">View Guide</a>
+        </div>
+        <!-- Card 4: Pattern Identifier -->
+        <div class="bg-[#fffaf6] rounded-2xl shadow-xl p-6 flex flex-col gap-3 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate__animated animate__fadeInUp max-w-sm mx-auto" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="text-2xl text-[#a1866f] mb-2 font-semibold">Pattern Identifier</h3>
+          <span class="text-[#6b4f36]">Game to spot patterns (e.g., certain accounts or post types).</span>
+          <a href="game.html" class="inline-block mt-2 px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg transition-all duration-200 hover:bg-[#6b4f36] hover:scale-105 subtle-float">Try Pattern Tool</a>
+        </div>
+        <!-- Card 5: Mindfulness Exercises -->
+        <div class="bg-[#a1866f] rounded-2xl shadow-xl p-6 flex flex-col gap-3 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate__animated animate__fadeInUp max-w-sm mx-auto" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-2xl text-[#fffaf6] mb-2 font-semibold">Mindfulness Exercises</h3>
+          <span class="text-[#fffaf6]">Breathing exercises (video/audio guides). Quick mindfulness routines for overwhelm.</span>
+          <a href="https://www.calm.com/?source=homepage" class="inline-block mt-2 px-6 py-3 rounded-full bg-[#fffaf6] text-[#a1866f] font-semibold shadow-lg transition-all duration-200 hover:bg-[#e9e3db] hover:scale-105 subtle-float">Watch Mindfulness Videos</a>
+        </div>
+        <!-- Card 6: Pause Prompts -->
+        <div class="bg-[#6b4f36] rounded-2xl shadow-xl p-6 flex flex-col gap-3 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate__animated animate__fadeInUp max-w-sm mx-auto" data-aos="fade-up" data-aos-delay="250">
+          <h3 class="text-2xl text-[#fffaf6] mb-2 font-semibold">Pause Prompts</h3>
+          <span class="text-[#fffaf6]">"Pause Button" feature to reflect before engaging or step away if needed.</span>
+          <a href="pause.html" class="inline-block mt-2 px-6 py-3 rounded-full bg-[#fffaf6] text-[#6b4f36] font-semibold shadow-lg transition-all duration-200 hover:bg-[#e9e3db] hover:scale-105 subtle-float">Try Pause Button</a>
+        </div>
+        <!-- Card 7: Digital Detox Plan -->
+        <div class="bg-[#e9e3db] rounded-2xl shadow-xl p-6 flex flex-col gap-3 transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate__animated animate__fadeInUp max-w-sm mx-auto" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-2xl text-[#a1866f] mb-2 font-semibold">Digital Detox Plan</h3>
+          <span class="text-[#6b4f36]">Step-by-step guide for short breaks from social media. Tips for gradually reducing screen time.</span>
+          <a href="detox.html" class="inline-block mt-2 px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg transition-all duration-200 hover:bg-[#6b4f36] hover:scale-105 subtle-float">View Detox Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-[#6b4f36] text-white text-center py-6 rounded-t-2xl mt-12">
+    <div class="container mx-auto">
+      <p>Contact | Privacy Policy | Social Links</p>
+    </div>
+  </footer>
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
+</body>
+</html>

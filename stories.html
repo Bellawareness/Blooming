@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peer Stories</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    .cursive-logo { font-family: 'Pacifico', cursive; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.4,0,0.2,1) both;
+    }
+  </style>
+</head>
+<body class="bg-[#f8f5f2] text-[#3e2c23] min-h-screen">
+  <!-- Nav Bar -->
+  <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <div class="cursive-logo text-3xl">Bloomingage</div>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+        <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+        <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+        <a href="stories.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl md:text-5xl text-[#6b4f36] font-normal mb-10 text-center fade-in-up">Peer Stories</h1>
+    <div class="max-w-xl mx-auto">
+      <div id="story-carousel" class="relative">
+        <!-- Story slides will be injected here by JS -->
+      </div>
+      <div class="flex justify-center gap-4 mt-6">
+        <button id="prev-story" class="px-4 py-2 rounded-full bg-[#a1866f] text-white font-semibold shadow hover:bg-[#6b4f36] transition">&larr;</button>
+        <button id="next-story" class="px-4 py-2 rounded-full bg-[#a1866f] text-white font-semibold shadow hover:bg-[#6b4f36] transition">&rarr;</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const stories = [
+      {
+        img: "images/be-yourself.png",
+        title: "Navigating Self-Comparison",
+        name: "Jasmine, 16",
+        text: `Jasmine loved spending time on Instagram, but she often found herself comparing her life to influencers with perfect photos and seemingly flawless lives. Over time, she noticed she felt anxious and dissatisfied after scrolling.</p>
+          <p class="text-[#3e2c23] mb-4">One day in a digital wellness workshop, Jasmine learned to recognize her “red flag feelings.” She started tracking her emotions and realized her self-comparison was the root of her agitation. With guidance, Jasmine curated her feed to include accounts that inspired and uplifted her. She also set screen-time limits to pause and reflect before diving back into social media.</p>
+          <p class="text-[#3e2c23] font-semibold">Jasmine now feels more confident and balanced online. She says, “It’s not about quitting social media—it’s about making it work for me, not against me.”`,
+      },
+      {
+        img: "images/Screen Shot 2025-06-30 at 2.29.11 AM.png",
+        title: "Overcoming Overstimulation",
+        name: "Ethan, 15",
+        text: `Ethan enjoyed TikTok for funny videos and creative content, but he often stayed up late scrolling through endless clips. He began feeling exhausted and struggled to focus in school. The overstimulation made him feel irritable, but he didn’t know how to stop.</p>
+          <p class="text-[#3e2c23] mb-4">After a conversation in his digital wellness class, Ethan realized the importance of taking breaks. He installed an app to limit his usage and replaced his late-night scrolling with reading or meditation.</p>
+          <p class="text-[#3e2c23] font-semibold">“At first, I felt weird not checking TikTok before bed,” Ethan admits. “But now, I sleep better and feel more in control of my time.”`,
+      },
+      {
+        img: "images/Screen Shot 2025-06-30 at 2.31.27 AM.png",
+        title: "Spotting Misinformation",
+        name: "Maya, 17",
+        text: `Maya was passionate about social issues and often shared posts she saw on social media. But one day, a friend pointed out that one of her posts included misleading information. Maya was embarrassed and didn’t know how to fix it.</p>
+          <p class="text-[#3e2c23] mb-4">Through a school workshop on digital literacy, Maya learned how to verify sources and recognize misinformation. She now uses fact-checking websites and takes time to research before sharing anything.</p>
+          <p class="text-[#3e2c23] font-semibold">Maya says, “I’m more careful about what I share. It feels good to know I’m contributing to the truth online instead of spreading something harmful.”`,
+      }
+    ];
+    let current = 0;
+    function renderStory(idx) {
+      const s = stories[idx];
+      document.getElementById('story-carousel').innerHTML = `
+        <div class="bg-[#fffaf6] rounded-2xl shadow-lg p-6 flex flex-col items-center fade-in-up">
+          <img src="${s.img}" alt="${s.title}" class="w-40 h-40 mb-4 rounded-lg shadow-md object-cover">
+          <h2 class="text-2xl text-[#6b4f36] font-semibold mb-2">${s.title}</h2>
+          <p class="text-[#a1866f] font-semibold mb-2">${s.name}</p>
+          <p class="text-[#3e2c23] text-center">${s.text}</p>
+        </div>
+        <div class="mt-2 text-[#a1866f] text-sm text-center">${idx+1} / ${stories.length}</div>
+      `;
+    }
+    document.getElementById('prev-story').onclick = () => {
+      current = (current - 1 + stories.length) % stories.length;
+      renderStory(current);
+    };
+    document.getElementById('next-story').onclick = () => {
+      current = (current + 1) % stories.length;
+      renderStory(current);
+    };
+    renderStory(current);
+  </script>
+</body>
+</html>

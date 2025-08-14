@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Daily Journal | Bloomingage</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pacifico for logo -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .cursive-logo { font-family: 'Pacifico', cursive; }
+    .subtle-float { animation: subtleFloat 3.5s ease-in-out infinite alternate; }
+    @keyframes subtleFloat { 0% { transform: translateY(0);} 100% { transform: translateY(-6px);} }
+    .journal-paper {
+      background: repeating-linear-gradient(
+        to bottom,
+        #fffaf6,
+        #fffaf6 38px,
+        #f3ede7 39px,
+        #fffaf6 40px
+      );
+    }
+    .journal-margin {
+      border-left: 4px solid #a1866f;
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body class="bg-[#f8f5f2] text-[#3e2c23] min-h-screen flex flex-col">
+  <!-- Nav Bar -->
+  <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <div class="cursive-logo text-3xl">Bloomingage</div>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+        <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+        <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+        <a href="stories.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+        <a href="journal.html" class="text-[#a1866f] font-semibold underline">Journal</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Journal Section -->
+  <main class="flex-1">
+    <section class="py-12">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="relative">
+          <!-- Arched image: positioned above the journal-paper, visually above the email form -->
+          <img src="images/Screen Shot 2025-06-30 at 4.06.52 PM.png"
+               alt="Decorative arch"
+               class="hidden md:block absolute right-0 -top-12 w-48 h-40 object-cover shadow-lg z-10"
+               style="border-top-left-radius: 100px; border-top-right-radius: 100px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; background: #e9e3db;">
+          <div class="bg-[#fffaf6] rounded-2xl shadow-2xl p-0 md:p-8 flex flex-col md:flex-row gap-0 md:gap-8 items-stretch journal-paper" data-aos="fade-up">
+            <!-- Left Column: Prompts and Mood -->
+            <div class="flex-1 flex flex-col gap-6 p-8 journal-margin">
+              <h2 class="text-2xl md:text-3xl text-[#a1866f] font-semibold mb-2">Today's Journal</h2>
+              <div class="mb-6 flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span id="journal-prompt" class="text-lg text-[#6b4f36] font-semibold">What lifted your spirits?</span>
+                  <button type="button"
+                    id="nextPromptBtn"
+                    class="ml-4 px-4 py-1 rounded-full bg-[#a1866f] text-white font-semibold shadow transition hover:bg-[#6b4f36] subtle-float text-sm"
+                    aria-label="Next Prompt">
+                    Next Prompt
+                  </button>
+                </div>
+              </div>
+              <div>
+                <label for="journal-date" class="block text-[#6b4f36] font-semibold mb-1">Date</label>
+                <input type="date" id="journal-date" name="date" required class="w-full rounded-xl border border-[#e9e3db] p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#a1866f]">
+              </div>
+              <div>
+                <label for="journal-mood" class="block text-[#6b4f36] font-semibold mb-1">Today's Mood</label>
+                <select id="journal-mood" name="mood" required class="w-full rounded-xl border border-[#e9e3db] p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#a1866f]">
+                  <option value="">Select mood...</option>
+                  <option value="happy">😊 Happy</option>
+                  <option value="okay">😐 Okay</option>
+                  <option value="sad">😔 Sad</option>
+                  <option value="anxious">😰 Anxious</option>
+                  <option value="angry">😡 Angry</option>
+                  <option value="excited">😃 Excited</option>
+                  <option value="tired">😴 Tired</option>
+                </select>
+              </div>
+              <div>
+                <label for="journal-grateful" class="block text-[#6b4f36] font-semibold mb-1">I am grateful for...</label>
+                <input type="text" id="journal-grateful" name="grateful" required class="w-full rounded-xl border border-[#e9e3db] p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#a1866f]" placeholder="Something or someone you're grateful for">
+              </div>
+              <div>
+                <label for="journal-todo" class="block text-[#6b4f36] font-semibold mb-1">Today's To-Do List</label>
+                <textarea id="journal-todo" name="todo" rows="3" required class="w-full rounded-xl border border-[#e9e3db] p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#a1866f]" placeholder="List your tasks for today"></textarea>
+              </div>
+            </div>
+            <!-- Right Column: Notes and Email -->
+            <form id="journalForm" class="flex-1 flex flex-col gap-6 p-8">
+              <div>
+                <label for="journal-email" class="block text-[#6b4f36] font-semibold mb-1">Your Email</label>
+                <input type="email" id="journal-email" name="email" required class="w-full rounded-xl border border-[#e9e3db] p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#a1866f]" placeholder="you@email.com">
+              </div>
+              <div>
+                <label for="journal-note" class="block text-[#6b4f36] font-semibold mb-1">Daily Note</label>
+                <textarea id="journal-note" name="note" rows="10" required class="w-full rounded-xl border border-[#e9e3db] p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#a1866f]" placeholder="Write your thoughts, feelings, or anything else..."></textarea>
+              </div>
+              <button type="submit" class="mt-2 px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg transition-all duration-200 hover:bg-[#6b4f36] hover:scale-105 subtle-float">Send to My Email</button>
+              <div id="journal-success" class="hidden text-green-600 text-center mt-4 font-semibold">Your journal entry has been sent! 💌</div>
+              <p class="text-xs text-[#a1866f] mt-2 text-center">Your entry will be sent to your email. We do not store your data.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#6b4f36] text-white text-center py-6 rounded-t-2xl mt-16 shadow-lg">
+    <div class="container mx-auto px-4">
+      <p class="mb-2 font-semibold">© 2025 Blooming Digital Wellness</p>
+      <p>
+        <a href="mailto:info@bloomingwellness.com" class="underline hover:text-[#e9e3db] transition">Contact</a>
+        <span class="mx-2">|</span>
+        <a href="#" class="underline hover:text-[#e9e3db] transition">Privacy Policy</a>
+        <span class="mx-2">|</span>
+        <a href="#" class="underline hover:text-[#e9e3db] transition">Instagram</a>
+      </p>
+    </div>
+  </footer>
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("rrrTEAxHxqM3lQ1um"); // Replace with your EmailJS user ID
+    })();
+    AOS.init({ once: true });
+    document.getElementById('journalForm').onsubmit = function(e) {
+      e.preventDefault();
+      emailjs.send('service_t1059n9', 'template_3xy53zm', {
+        to_email: document.getElementById('journal-email').value,
+        journal_date: document.getElementById('journal-date').value,
+        journal_mood: document.getElementById('journal-mood').value,
+        journal_grateful: document.getElementById('journal-grateful').value,
+        journal_todo: document.getElementById('journal-todo').value,
+        journal_note: document.getElementById('journal-note').value
+      }).then(function(response) {
+        document.getElementById('journal-success').classList.remove('hidden');
+        document.getElementById('journalForm').reset();
+        setTimeout(() => {
+          document.getElementById('journal-success').classList.add('hidden');
+        }, 3000);
+      }, function(error) {
+        alert('Failed to send. Please try again.');
+      });
+    };
+
+    // Prompts array
+    const prompts = [
+      "What lifted your spirits today?",
+      "What brought you down?",
+      "What is something you learned about yourself?",
+      "Who made a positive impact on your day?",
+      "What is one thing you want to remember from today?"
+    ];
+    let promptIndex = 0;
+    const promptSpan = document.getElementById('journal-prompt');
+    const nextPromptBtn = document.getElementById('nextPromptBtn');
+    nextPromptBtn.addEventListener('click', () => {
+      promptIndex = (promptIndex + 1) % prompts.length;
+      promptSpan.textContent = prompts[promptIndex];
+    });
+  </script>
+</body>
+</html>

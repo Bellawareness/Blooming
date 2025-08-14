@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feelings Explorer Game | Bloomingage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Pacifico for logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .cursive-logo { font-family: 'Pacifico', cursive; }
+        .deep-shadow {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 8px 12px rgba(0, 0, 0, 0.1);
+        }
+        .bg-brown-50 { background-color: #fffaf6; }
+        .bg-brown-100 { background-color: #f8f5f2; }
+        .bg-brown-200 { background-color: #e9e3db; }
+        .text-brown-800 { color: #6b4f36; }
+        .text-brown-600 { color: #a1866f; }
+        .text-brown-700 { color: #8d7158; }
+        .bounce {
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-10px);}
+        }
+        .fade-in {
+            animation: fadeIn 0.8s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0;}
+            to { opacity: 1;}
+        }
+        .slide-in {
+            animation: slideIn 0.7s;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(40px); opacity: 0;}
+            to { transform: translateY(0); opacity: 1;}
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-brown-50 flex flex-col items-center p-6">
+    <!-- Nav Bar -->
+    <header class="bg-[#6b4f36] rounded-b-[40px] shadow-md py-6 mb-8 w-full">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <div class="cursive-logo text-3xl text-[#fffaf6]">Bloomingage</div>
+            <nav class="space-x-6">
+                <a href="index.html" class="text-[#fffaf6] font-semibold hover:text-[#e9e3db] transition">Home</a>
+                <a href="workshop.html" class="text-[#fffaf6] font-semibold hover:text-[#e9e3db] transition">Workshops</a>
+                <a href="toolkit.html" class="text-[#fffaf6] font-semibold hover:text-[#e9e3db] transition">Toolkit</a>
+                <a href="stories.html" class="text-[#fffaf6] font-semibold hover:text-[#e9e3db] transition">Stories</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1 flex flex-col items-center w-full">
+        <section class="text-center mb-8" data-aos="fade-down">
+            <h1 class="text-4xl font-bold text-brown-800 mb-2">Pattern Spotter Game</h1>
+            <p class="text-brown-600 mt-2 text-lg">
+                Spot patterns in your reactions to different types of social media posts. Are there certain accounts or post types that affect your mood?
+            </p>
+        </section>
+
+        <section id="game" class="bg-brown-200 deep-shadow rounded-2xl p-6 w-full max-w-md text-center relative fade-in slide-in" data-aos="zoom-in">
+            <div class="absolute left-4 top-4 text-base text-[#a1866f] bounce" id="progress-indicator"></div>
+            <h2 id="question" class="text-xl font-semibold text-brown-800 mb-4">How does this post make you feel?</h2>
+            <div id="post-desc" class="mt-6 mb-6 text-base text-brown-700 font-medium min-h-[80px] flex items-center justify-center transition-all duration-500"></div>
+            <div class="flex justify-center gap-6 mt-8">
+                <button class="bg-[#fffaf6] text-green-600 border-2 border-green-400 hover:bg-green-100 shadow-md rounded-full w-16 h-16 flex flex-col items-center justify-center text-lg font-bold transition-all duration-200 transform hover:-translate-y-2 hover:scale-110 focus:ring-4 focus:ring-green-200 outline-none"
+                        onclick="logFeeling('Happy')" data-aos="fade-up" data-aos-delay="100">
+                    😊
+                    <span class="text-xs mt-1 font-semibold">Happy</span>
+                </button>
+                <button class="bg-[#fffaf6] text-yellow-600 border-2 border-yellow-400 hover:bg-yellow-100 shadow-md rounded-full w-16 h-16 flex flex-col items-center justify-center text-lg font-bold transition-all duration-200 transform hover:-translate-y-2 hover:scale-110 focus:ring-4 focus:ring-yellow-200 outline-none"
+                        onclick="logFeeling('Neutral')" data-aos="fade-up" data-aos-delay="200">
+                    😐
+                    <span class="text-xs mt-1 font-semibold">Neutral</span>
+                </button>
+                <button class="bg-[#fffaf6] text-red-600 border-2 border-red-400 hover:bg-red-100 shadow-md rounded-full w-16 h-16 flex flex-col items-center justify-center text-lg font-bold transition-all duration-200 transform hover:-translate-y-2 hover:scale-110 focus:ring-4 focus:ring-red-200 outline-none"
+                        onclick="logFeeling('Sad')" data-aos="fade-up" data-aos-delay="300">
+                    😔
+                    <span class="text-xs mt-1 font-semibold">Sad</span>
+                </button>
+            </div>
+            <div class="mt-8 text-brown-700 text-base">
+                <span class="font-semibold">Tip:</span> Notice your first reaction. There are no right or wrong answers!
+            </div>
+        </section>
+
+        <section id="results" class="hidden mt-12 p-6 bg-[#6b4f36] rounded-2xl shadow-lg w-full max-w-md fade-in slide-in" data-aos="fade-up">
+            <h2 class="text-2xl font-bold text-[#fffaf6] mb-4">Your Results</h2>
+            <div id="log-list" class="mt-4 text-[#e9e3db] text-left space-y-4"></div>
+            <div id="pattern-summary" class="mt-6 text-lg text-[#fffaf6] font-semibold"></div>
+            <button class="bg-[#fffaf6] text-[#6b4f36] hover:bg-[#e9e3db] shadow-lg rounded-full px-8 py-3 mt-8 text-lg font-bold transition-all duration-200 transform hover:-translate-y-1 hover:scale-105 focus:ring-4 focus:ring-[#a1866f] outline-none"
+                    onclick="restartGame()">Play Again</button>
+            <div class="flex flex-wrap gap-8 justify-center mt-10">
+                <a href="journal.html"
+                   class="group w-40 h-16 flex items-center justify-center rounded-2xl bg-[#fffaf6] text-[#6b4f36] text-xl font-bold shadow-xl hover:bg-[#e9e3db] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 focus:ring-4 focus:ring-[#a1866f] outline-none"
+                   title="Go to Journal">
+                  <span class="group-hover:underline">Go to Journal</span>
+                </a>
+                <a href="toolkit.html"
+                   class="group w-40 h-16 flex items-center justify-center rounded-2xl bg-[#fffaf6] text-[#6b4f36] text-xl font-bold shadow-xl hover:bg-[#e9e3db] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 focus:ring-4 focus:ring-[#a1866f] outline-none"
+                   title="Go to Resources">
+                  <span class="group-hover:underline">Resources</span>
+                </a>
+                <a href="https://www.youtube.com/results?search_query=breathing+exercise+pause"
+                   target="_blank" rel="noopener"
+                   class="group w-40 h-16 flex items-center justify-center rounded-2xl bg-[#fffaf6] text-[#6b4f36] text-xl font-bold shadow-xl hover:bg-[#e9e3db] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 focus:ring-4 focus:ring-[#a1866f] outline-none"
+                   title="Take a Pause">
+                  <span class="group-hover:underline">Pause</span>
+                </a>
+            </div>
+            <div class="text-center text-[#a1866f] text-sm mt-4">Reflect, get support, or take a mindful pause.</div>
+        </section>
+    </main>
+
+    <footer class="bg-[#a1866f] text-white text-center py-6 rounded-t-2xl mt-16 shadow-lg w-full">
+        <div class="container mx-auto px-4">
+            <p class="mb-2 font-semibold">© 2025 Blooming Digital Wellness</p>
+            <p>
+                <a href="mailto:info@bloomingwellness.com" class="underline hover:text-[#e9e3db] transition">Contact</a>
+                <span class="mx-2">|</span>
+                <a href="#" class="underline hover:text-[#e9e3db] transition">Privacy Policy</a>
+                <span class="mx-2">|</span>
+                <a href="#" class="underline hover:text-[#e9e3db] transition">Instagram</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+
+        // Pattern Spotter: Each post has a type and description
+        const posts = [
+            { type: 'Celebrity Post', desc: 'A famous singer shares a photo of their luxury vacation with a caption: "Living my best life!"' },
+            { type: 'Viral Video', desc: 'A TikTok dance challenge that everyone at school is talking about.' },
+            { type: 'Cartoon Meme', desc: 'A funny cartoon meme about procrastination that is trending.' },
+            { type: 'Influencer Story', desc: 'A fitness influencer posts a before-and-after transformation with a motivational quote.' },
+            { type: 'News Headline', desc: 'A breaking news headline about a global event, shared widely on Instagram.' },
+            { type: 'Friend’s Achievement', desc: 'A friend posts about winning a big award and getting hundreds of likes.' },
+            { type: 'Celebrity Scandal', desc: 'A celebrity is trending because of a controversial tweet.' },
+            { type: 'Pet Video', desc: 'A cute puppy video with thousands of hearts and comments.' }
+        ];
+        let currentPost = 0;
+        let feelingsLog = [];
+
+        function logFeeling(feeling) {
+            const current = posts[currentPost];
+            feelingsLog.push({ type: current.type, feeling, desc: current.desc });
+
+            if (currentPost < posts.length - 1) {
+                currentPost++;
+                animatePostChange();
+            } else {
+                showResults();
+            }
+        }
+
+        function animatePostChange() {
+            const postDesc = document.getElementById('post-desc');
+            postDesc.classList.remove('fade-in');
+            setTimeout(() => {
+                updatePost();
+                postDesc.classList.add('fade-in');
+            }, 200);
+        }
+
+        function updatePost() {
+            const post = posts[currentPost];
+            document.getElementById('post-desc').textContent = post.desc;
+            document.getElementById('question').textContent = `How does this ${post.type.toLowerCase()} make you feel?`;
+            document.getElementById('progress-indicator').textContent = `Post ${currentPost + 1} / ${posts.length}`;
+        }
+
+        function showResults() {
+            const game = document.getElementById('game');
+            const results = document.getElementById('results');
+            const logList = document.getElementById('log-list');
+            const patternSummary = document.getElementById('pattern-summary');
+
+            game.classList.add('hidden');
+            results.classList.remove('hidden');
+            logList.innerHTML = '';
+
+            // Group by type for pattern spotting
+            const typeMap = {};
+            feelingsLog.forEach(log => {
+                if (!typeMap[log.type]) typeMap[log.type] = [];
+                typeMap[log.type].push(log.feeling);
+            });
+
+            Object.entries(typeMap).forEach(([type, feelings]) => {
+                const counts = { Happy: 0, Neutral: 0, Sad: 0 };
+                feelings.forEach(f => counts[f]++);
+                const div = document.createElement('div');
+                div.className = "rounded-xl px-4 py-3 bg-[#fffaf6] text-[#6b4f36] shadow-md fade-in slide-in";
+                div.innerHTML = `<span class="font-semibold">${type}</span><br>
+                    <span class="text-sm">Happy: ${counts.Happy}, Neutral: ${counts.Neutral}, Sad: ${counts.Sad}</span>`;
+                logList.appendChild(div);
+            });
+
+            // Pattern summary
+            let patternText = "Look for patterns: Do certain post types or accounts make you feel a certain way?";
+            patternSummary.textContent = patternText;
+        }
+
+        function restartGame() {
+            currentPost = 0;
+            feelingsLog = [];
+            updatePost();
+
+            document.getElementById('game').classList.remove('hidden');
+            document.getElementById('results').classList.add('hidden');
+        }
+
+        // Initialize the first post
+        updatePost();
+    </script>
+</body>
+</html>

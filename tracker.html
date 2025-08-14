@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Awareness Toolkit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+      .cursive-logo { font-family: 'Pacifico', cursive; }
+    </style>
+</head>
+<body class="bg-[#f8f5f2] min-h-screen flex flex-col text-[#3e2c23]">
+    <!-- Nav Bar -->
+    <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8">
+      <div class="container mx-auto flex items-center justify-between px-4">
+        <div class="cursive-logo text-3xl">Bloomingage</div>
+        <nav class="space-x-6">
+          <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+          <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+          <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+          <a href="#" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-4 flex-1">
+        <!-- Overview Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-normal text-[#6b4f36]">Self-Awareness Toolkit</h1>
+            <p class="text-[#6b4f36] mt-4">
+                Learn how your social media habits affect your mood and self-image with our easy-to-use resources.
+
+            </p>
+        </header>
+              <!-- Mood Tracking Section -->
+        <section class="mb-8">
+          <div class="bg-[#fffaf6] shadow-lg rounded-2xl p-6">
+            <h2 class="text-2xl font-normal text-[#6b4f36] mb-4">How Are You Feeling After Scrolling?</h2>
+            <p class="text-[#3e2c23] mb-4">Tap the emoji that matches your mood right now..</p>
+            <div id="mood-options" class="flex justify-center gap-6 mb-6">
+              <button class="mood-btn text-3xl transition-transform duration-150 hover:scale-125" data-mood="😊" title="Good Vibes">😊</button>
+              <button class="mood-btn text-3xl transition-transform duration-150 hover:scale-125" data-mood="😐" title="Meh">😐</button>
+              <button class="mood-btn text-3xl transition-transform duration-150 hover:scale-125" data-mood="😔" title="Down">😔</button>
+              <button class="mood-btn text-3xl transition-transform duration-150 hover:scale-125" data-mood="😡" title="Annoyed">😡</button>
+            </div>
+            <div id="mood-history" class="mt-4">
+              <h3 class="text-lg text-[#a1866f] font-semibold mb-2">Your Recent Check-ins:</h3>
+              <div id="mood-list" class="flex gap-2 text-2xl"></div>
+            </div>
+          </div>
+        </section>
+
+  
+        <!-- Resources Section -->
+        <section class="mb-8">
+            <div class="bg-[#fffaf6] shadow-lg rounded-2xl p-6">
+                <h2 class="text-2xl font-normal text-[#6b4f36] mb-4">Printable & Digital Templates</h2>
+                <ul class="list-disc list-inside text-[#3e2c23] space-y-2">
+                    <li>Emotional Check-in Chart</li>
+                    <li>Social Media Impact Tracker</li>
+                    <li>Reflection Journal</li>
+                </ul>
+                <a href="#" class="mt-6 inline-block bg-[#a1866f] text-white py-2 px-4 rounded-full font-semibold transition hover:bg-[#6b4f36]">Download Templates</a>
+            </div>
+        </section>
+        <!-- Videos Section -->
+        <section class="mb-8">
+            <div class="bg-[#fffaf6] shadow-lg rounded-2xl p-6">
+                <h2 class="text-2xl font-normal text-[#6b4f36] mb-4">Educational Videos</h2>
+                <p class="text-[#3e2c23]">
+SELF AWARENESS : A SIMPLE GUIDE FOR TEENAGERS
+                </p>
+                <a href="https://www.youtube.com/watch?v=ohLZ0q0SKeA&t=3s&ab_channel=HolisticElearningPlatform" class="mt-6 inline-block bg-[#a1866f] text-white py-2 px-4 rounded-full font-semibold transition hover:bg-[#6b4f36]">Watch Now</a>
+            </div>
+        </section>
+        <!-- Workshops Section -->
+        <section class="mb-8">
+            <div class="bg-[#fffaf6] shadow-lg rounded-2xl p-6">
+                <h2 class="text-2xl font-normal text-[#6b4f36] mb-4">Workshops & Webinars</h2>
+                <p class="text-[#3e2c23]">
+                    Join our interactive sessions to explore self-awareness and digital wellness in a collaborative environment.
+                </p>
+                <a href="workshop.html" class="mt-6 inline-block bg-[#a1866f] text-white py-2 px-4 rounded-full font-semibold transition hover:bg-[#6b4f36]">Sign Up for a Workshop</a>
+            </div>
+        </section>
+  
+ 
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#6b4f36] text-white text-center py-6 rounded-t-2xl mt-12">
+      <div class="container mx-auto">
+        <p>Contact | Privacy Policy | Social Links</p>
+      </div>
+    </footer>
+    <script>
+      // Simple mood tracker using localStorage
+      const moodBtns = document.querySelectorAll('.mood-btn');
+      const moodList = document.getElementById('mood-list');
+      const MOOD_KEY = 'bloom_mood_history';
+
+      function getMoodHistory() {
+        return JSON.parse(localStorage.getItem(MOOD_KEY) || '[]');
+      }
+      function setMoodHistory(history) {
+        localStorage.setItem(MOOD_KEY, JSON.stringify(history));
+      }
+      function renderMoodHistory() {
+        const history = getMoodHistory();
+        moodList.innerHTML = history.slice(-10).map(mood => `<span>${mood}</span>`).join('');
+      }
+      moodBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const mood = btn.getAttribute('data-mood');
+          const history = getMoodHistory();
+          history.push(mood);
+          setMoodHistory(history);
+          renderMoodHistory();
+        });
+      });
+      // Initial render
+      renderMoodHistory();
+    </script>
+</body>
+</html>

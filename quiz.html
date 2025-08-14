@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotional Awareness Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    .cursive-logo { font-family: 'Pacifico', cursive; }
+  </style>
+</head>
+<body class="bg-[#f8f5f2] text-[#3e2c23] py-10 px-6 min-h-screen">
+  <!-- Nav Bar -->
+  <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <div class="cursive-logo text-3xl">Bloomingage</div>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+        <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+        <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+        <a href="#" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="max-w-2xl mx-auto bg-[#fffaf6] rounded-2xl shadow-lg p-8">
+    <h1 class="text-3xl font-normal text-[#6b4f36] mb-4">Emotional Awareness Quiz</h1>
+    <p class="mb-6 text-[#6b4f36] font-semibold">This quiz has 10 questions. Please answer honestly</p>
+    <form id="quiz-form" class="space-y-6">
+      <!-- Questions will be injected here -->
+      <div id="question-container"></div>
+      <div class="flex justify-between mt-8">
+        <button type="button" id="prev-btn" class="bg-[#e9e3db] text-[#6b4f36] px-4 py-2 rounded font-semibold shadow hover:bg-[#d6c7b7] transition hidden">Previous</button>
+        <button type="button" id="next-btn" class="bg-[#a1866f] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-[#6b4f36] transition">Next</button>
+      </div>
+    </form>
+    <div id="results" class="hidden mt-8">
+      <h2 class="text-xl font-bold text-[#6b4f36]">Your Results</h2>
+      <p class="mt-2">Based on your answers, here's some advice:</p>
+      <p id="feedback" class="mt-2 text-[#3e2c23]"></p>
+    </div>
+  </div>
+
+  <!-- Emotional Check-In Section -->
+  <div class="max-w-2xl mx-auto bg-[#fffaf6] rounded-2xl shadow-lg p-8 mt-12">
+    <h2 class="text-2xl font-normal text-[#a1866f] mb-4">Emotional Check-In</h2>
+    <form id="checkin-form" class="space-y-6">
+      <div>
+        <label class="block mb-2 text-[#6b4f36] font-semibold" for="feeling">How are you feeling today?</label>
+        <select id="feeling" name="feeling" required class="w-full rounded-xl border border-[#e9e3db] p-3 focus:outline-none focus:ring-2 focus:ring-[#a1866f]">
+          <option value="">Select...</option>
+          <option value="happy">😊 Happy</option>
+          <option value="okay">😐 Okay</option>
+          <option value="sad">😔 Sad</option>
+          <option value="anxious">😰 Anxious</option>
+          <option value="angry">😡 Angry</option>
+          <option value="overwhelmed">😵 Overwhelmed</option>
+        </select>
+      </div>
+      <div>
+        <label class="block mb-2 text-[#6b4f36] font-semibold" for="trigger">What triggered these feelings?</label>
+        <input id="trigger" name="trigger" type="text" required class="w-full rounded-xl border border-[#e9e3db] p-3 focus:outline-none focus:ring-2 focus:ring-[#a1866f]" placeholder="e.g. a post, a message, news, etc.">
+      </div>
+      <div>
+        <label class="block mb-2 text-[#6b4f36] font-semibold" for="improve">What could you do to improve your mood?</label>
+        <input id="improve" name="improve" type="text" required class="w-full rounded-xl border border-[#e9e3db] p-3 focus:outline-none focus:ring-2 focus:ring-[#a1866f]" placeholder="e.g. take a break, talk to a friend, etc.">
+      </div>
+      <button type="submit" class="px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg transition-all duration-200 hover:bg-[#6b4f36] hover:scale-105 subtle-float">Submit Check-In</button>
+      <div id="checkin-success" class="hidden text-green-600 text-center mt-4 font-semibold">Check-in saved! Remember to take care of yourself 💚</div>
+    </form>
+  </div>
+
+  <style>
+    .cursive-logo { font-family: 'Pacifico', cursive; }
+    .subtle-float {
+      animation: subtleFloat 3.5s ease-in-out infinite alternate;
+    }
+    @keyframes subtleFloat {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-6px);}
+    }
+  </style>
+
+  <script>
+const questions = [
+  {
+    q: "1. How do you usually feel after spending more than 30 minutes on social media?",
+    name: "q1",
+    options: [
+      { value: "positive", label: "Energized and positive" },
+      { value: "neutral", label: "Neutral" },
+      { value: "tired", label: "Tired or sad" },
+      { value: "overwhelmed", label: "Overwhelmed and agitated" }
+    ]
+  },
+  {
+    q: "2. How often do you compare your life to others on social media?",
+    name: "q2",
+    options: [
+      { value: "rarely", label: "Rarely" },
+      { value: "sometimes", label: "Sometimes" },
+      { value: "often", label: "Often" },
+      { value: "always", label: "Always" }
+    ]
+  },
+  {
+    q: "3. How easy is it for you to take a break from social media?",
+    name: "q3",
+    options: [
+      { value: "very_easy", label: "Very easy" },
+      { value: "somewhat_easy", label: "Somewhat easy" },
+      { value: "difficult", label: "Difficult" },
+      { value: "impossible", label: "Almost impossible" }
+    ]
+  },
+  {
+    q: "4. Do you notice changes in your mood after scrolling?",
+    name: "q4",
+    options: [
+      { value: "never", label: "Never" },
+      { value: "sometimes", label: "Sometimes" },
+      { value: "often", label: "Often" },
+      { value: "always", label: "Always" }
+    ]
+  },
+  {
+    q: "5. How often do you feel pressure to post or respond quickly?",
+    name: "q5",
+    options: [
+      { value: "never", label: "Never" },
+      { value: "rarely", label: "Rarely" },
+      { value: "sometimes", label: "Sometimes" },
+      { value: "often", label: "Often" }
+    ]
+  },
+  {
+    q: "6. Do you use social media to avoid other feelings or tasks?",
+    name: "q6",
+    options: [
+      { value: "never", label: "Never" },
+      { value: "rarely", label: "Rarely" },
+      { value: "sometimes", label: "Sometimes" },
+      { value: "often", label: "Often" }
+    ]
+  },
+  {
+    q: "7. How often do you see content that makes you feel bad about yourself?",
+    name: "q7",
+    options: [
+      { value: "never", label: "Never" },
+      { value: "rarely", label: "Rarely" },
+      { value: "sometimes", label: "Sometimes" },
+      { value: "often", label: "Often" }
+    ]
+  },
+  {
+    q: "8. How likely are you to talk to someone about negative feelings from social media?",
+    name: "q8",
+    options: [
+      { value: "very_likely", label: "Very likely" },
+      { value: "somewhat_likely", label: "Somewhat likely" },
+      { value: "unlikely", label: "Unlikely" },
+      { value: "never", label: "Never" }
+    ]
+  },
+  {
+    q: "9. Do you track or reflect on your emotions after using social media?",
+    name: "q9",
+    options: [
+      { value: "always", label: "Always" },
+      { value: "sometimes", label: "Sometimes" },
+      { value: "rarely", label: "Rarely" },
+      { value: "never", label: "Never" }
+    ]
+  },
+  {
+    q: "10. How often do you feel in control of your social media use?",
+    name: "q10",
+    options: [
+      { value: "always", label: "Always" },
+      { value: "often", label: "Often" },
+      { value: "sometimes", label: "Sometimes" },
+      { value: "never", label: "Never" }
+    ]
+  }
+];
+
+let current = 0;
+const answers = {};
+
+function renderQuestion() {
+  const q = questions[current];
+  let html = `<p class="font-semibold text-[#6b4f36] mb-4">${q.q}</p>`;
+  q.options.forEach(opt => {
+    const checked = answers[q.name] === opt.value ? 'checked' : '';
+    html += `
+      <div>
+        <label class="cursor-pointer">
+          <input type="radio" name="${q.name}" value="${opt.value}" class="mr-2" ${checked}>
+          ${opt.label}
+        </label>
+      </div>
+    `;
+  });
+  html += `<div class="mt-4 text-sm text-[#a1866f]">Question ${current + 1} of ${questions.length}</div>`;
+  document.getElementById('question-container').innerHTML = html;
+
+  // Show/hide prev/next
+  document.getElementById('prev-btn').style.display = current === 0 ? 'none' : '';
+  document.getElementById('next-btn').innerText = current === questions.length - 1 ? 'Submit' : 'Next';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderQuestion();
+
+  document.getElementById('question-container').addEventListener('change', e => {
+    if (e.target.type === 'radio') {
+      answers[questions[current].name] = e.target.value;
+    }
+  });
+
+  document.getElementById('prev-btn').onclick = () => {
+    if (current > 0) current--;
+    renderQuestion();
+  };
+
+  document.getElementById('next-btn').onclick = () => {
+    // Require answer before moving on
+    if (!answers[questions[current].name]) {
+      alert('Please select an answer before continuing.');
+      return;
+    }
+    if (current < questions.length - 1) {
+      current++;
+      renderQuestion();
+    } else {
+      showResults();
+    }
+  };
+});
+
+function showResults() {
+  document.getElementById('quiz-form').style.display = 'none';
+  // Simple feedback logic
+  let negative = 0;
+  if (
+    answers.q1 === 'overwhelmed' ||
+    answers.q2 === 'always' ||
+    answers.q3 === 'impossible' ||
+    answers.q4 === 'always' ||
+    answers.q5 === 'often' ||
+    answers.q6 === 'often' ||
+    answers.q7 === 'often' ||
+    answers.q8 === 'never' ||
+    answers.q9 === 'never' ||
+    answers.q10 === 'never'
+  ) {
+    negative++;
+  }
+  let feedback = '';
+  if (negative >= 2) {
+    feedback = 'It seems like social media may be affecting your emotions or habits negatively. Consider taking regular breaks, reflecting on your feelings, and talking to someone you trust.';
+  } else {
+    feedback = 'You seem to have a balanced approach to social media. Keep monitoring your feelings and adjust as needed!';
+  }
+  document.getElementById('results').classList.remove('hidden');
+  document.getElementById('feedback').innerText = feedback;
+}
+
+// Emotional Check-In form logic
+document.getElementById('checkin-form').onsubmit = function(e) {
+  e.preventDefault();
+  document.getElementById('checkin-success').classList.remove('hidden');
+  setTimeout(() => {
+    document.getElementById('checkin-success').classList.add('hidden');
+    document.getElementById('checkin-form').reset();
+  }, 2500);
+};
+</script>
+</body>
+</html>

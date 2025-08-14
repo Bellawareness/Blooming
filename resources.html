@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Resources</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    .cursive-logo { font-family: 'Pacifico', cursive; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.4,0,0.2,1) both;
+    }
+  </style>
+</head>
+<body class="bg-[#f8f5f2] text-[#3e2c23] min-h-screen">
+  <!-- Nav Bar -->
+  <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <div class="cursive-logo text-3xl">Bloomingage</div>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+        <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+        <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+        <a href="stories.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl md:text-5xl text-[#6b4f36] font-normal mb-10 text-center fade-in-up">Parent Resources</h1>
+    <div class="flex flex-col gap-12">
+      <!-- Books -->
+      <div class="bg-[#fffaf6] rounded-2xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-8 fade-in-up hover:shadow-2xl transition-shadow duration-300">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80"
+             alt="Books"
+             class="w-full max-w-[180px] rounded-xl object-cover aspect-[4/5] shadow-md mb-4 md:mb-0 transition-transform duration-300 hover:scale-105">
+        <div>
+          <h2 class="text-2xl text-[#a1866f] font-semibold mb-4">Recommended Books</h2>
+          <ul class="list-disc list-inside space-y-2">
+            <li><span class="font-bold">Digital Minimalism</span> by Cal Newport</li>
+            <li><span class="font-bold">Parenting in the Screen Age</span> by Delaney Ruston, MD</li>
+            <li><span class="font-bold">The Tech-Wise Family</span> by Andy Crouch</li>
+            <li><span class="font-bold">Raising Humans in a Digital World</span> by Diana Graber</li>
+            <li><span class="font-bold">Screenwise</span> by Devorah Heitner</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Videos -->
+      <div class="bg-[#fffaf6] rounded-2xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-8 fade-in-up hover:shadow-2xl transition-shadow duration-300" style="animation-delay:0.1s;">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+             alt="Videos"
+             class="w-full max-w-[180px] rounded-xl object-cover aspect-[4/5] shadow-md mb-4 md:mb-0 transition-transform duration-300 hover:scale-105">
+        <div>
+          <h2 class="text-2xl text-[#a1866f] font-semibold mb-4">Videos & Documentaries</h2>
+          <ul class="list-disc list-inside space-y-2">
+            <li><span class="font-bold">TED Talk:</span> "Why Screens Make Us Less Happy" by Adam Alter</li>
+            <li><span class="font-bold">TED Talk:</span> "How to Raise Kids in a Screen-Filled World" by Sara DeWitt</li>
+            <li><span class="font-bold">Documentary:</span> "The Social Dilemma" (Netflix)</li>
+            <li><span class="font-bold">YouTube Channel:</span> Common Sense Media</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Other Resources -->
+      <div class="bg-[#fffaf6] rounded-2xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-8 fade-in-up hover:shadow-2xl transition-shadow duration-300" style="animation-delay:0.2s;">
+        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80"
+             alt="Resources"
+             class="w-full max-w-[180px] rounded-xl object-cover aspect-[4/5] shadow-md mb-4 md:mb-0 transition-transform duration-300 hover:scale-105">
+        <div>
+          <h2 class="text-2xl text-[#a1866f] font-semibold mb-4">Other Resources</h2>
+          <ul class="list-disc list-inside space-y-2">
+            <li><span class="font-bold">Parent Workshops & Webinars:</span> ConnectSafely, Family Online Safety Institute, Digital Wellness Collective</li>
+            <li><span class="font-bold">Printable Tools:</span> Common Sense Media’s Family Media Agreement, Emotion Tracker Templates</li>
+            <li><span class="font-bold">Apps:</span> Bark, Circle, Headspace</li>
+            <li><span class="font-bold">Support Groups:</span> Facebook Groups, Screen-Free Week</li>
+            <li><span class="font-bold">Educational Platforms:</span> Be Internet Awesome (Google), CyberWise</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bg-[#e9e3db] rounded-2xl shadow p-6 mt-12 fade-in-up">
+      <h3 class="text-2xl text-[#6b4f36] font-normal mb-4">Want More?</h3>
+      <p class="mb-2">Would you like to combine these into a handout or add additional parent-teacher discussion prompts?</p>
+      <a href="mailto:info@yourdomain.com"
+         class="inline-block mt-2 px-6 py-3 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg transition hover:bg-[#6b4f36] hover:scale-105">Contact Us</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#6b4f36] text-white text-center py-6 rounded-t-2xl mt-12">
+    <div class="container mx-auto">
+      <p>Contact | Privacy Policy | Social Links</p>
+    </div>
+  </footer>
+</body>
+</html>

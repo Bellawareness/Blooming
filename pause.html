@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pause, Balance, and Thrive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .cursive-logo { font-family: 'Pacifico', cursive; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.4,0,0.2,1) both;
+    }
+    .slide-card {
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .slide-card.active, .slide-card:hover {
+      box-shadow: 0 8px 32px 0 rgba(161,134,111,0.18), 0 1.5px 8px 0 rgba(161,134,111,0.12);
+      transform: scale(1.03) translateY(-4px);
+      border: 2px solid #a1866f;
+    }
+  </style>
+</head>
+<body class="bg-[#f8f5f2] text-[#3e2c23] min-h-screen">
+  <!-- Nav Bar -->
+  <header class="bg-[#e9e3db] rounded-b-[40px] shadow-md py-6 mb-8">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <div class="cursive-logo text-3xl">Bloomingage</div>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Home</a>
+        <a href="workshop.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Workshops</a>
+        <a href="toolkit.html" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Toolkit</a>
+        <a href="#" class="text-[#6b4f36] font-semibold hover:text-[#3e2c23] transition">Stories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-10 fade-in-up">
+    <h1 class="text-4xl md:text-5xl text-[#6b4f36] font-normal mb-8 text-center">Pause, Balance, and Thrive</h1>
+    <div class="space-y-10">
+
+      <!-- Interactive Slides Section -->
+      <section class="bg-[#fffaf6] rounded-2xl shadow-lg p-6 mb-10">
+        <h2 class="text-2xl text-[#6b4f36] font-normal mb-4 text-center">Learn Healthy Digital Habits</h2>
+        <div id="slide-container" class="relative flex flex-col items-center">
+          <!-- Slides will be injected here -->
+        </div>
+        <div class="flex justify-center gap-4 mt-6">
+          <button id="prev-slide" class="px-4 py-2 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg hover:bg-[#6b4f36] transition-all duration-200" aria-label="Previous Slide">&larr;</button>
+          <button id="next-slide" class="px-4 py-2 rounded-full bg-[#a1866f] text-white font-semibold shadow-lg hover:bg-[#6b4f36] transition-all duration-200" aria-label="Next Slide">&rarr;</button>
+        </div>
+      </section>
+
+      <!-- Activities & Games Section -->
+      <section class="bg-[#fffaf6] rounded-2xl shadow-lg p-6 fade-in-up">
+        <h2 class="text-2xl text-[#6b4f36] font-normal mb-4">Try These Activities</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Activity 1 -->
+          <div class="slide-card bg-[#e9e3db] rounded-xl p-4 flex flex-col items-center shadow-md hover:shadow-xl transition-all duration-200">
+            <img src="https://cdn.pixabay.com/photo/2017/01/31/13/14/brain-2029366_1280.png" alt="Emotion Tracker" class="w-24 h-24 mb-2 rounded-full object-cover">
+            <h3 class="text-lg text-[#a1866f] font-semibold mb-1">Emotion Tracker Game</h3>
+            <p class="text-sm text-[#6b4f36] mb-2 text-center">Log your mood after using different apps. Spot patterns and discuss!</p>
+            <a href="game.html" class="px-4 py-2 rounded-full bg-[#a1866f] text-white font-semibold shadow hover:bg-[#6b4f36] transition">Play Now</a>
+          </div>
+          <!-- Activity 2 -->
+          <div class="slide-card bg-[#e9e3db] rounded-xl p-4 flex flex-col items-center shadow-md hover:shadow-xl transition-all duration-200">
+            <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/pie-chart-1292311_1280.png" alt="Digital Diet" class="w-24 h-24 mb-2 rounded-full object-cover">
+            <h3 class="text-lg text-[#a1866f] font-semibold mb-1">Digital Diet Pie Chart</h3>
+            <p class="text-sm text-[#6b4f36] mb-2 text-center">Visualize your app use. Which apps nourish you? Which drain you?</p>
+            <a href="https://www.canva.com/graphs/pie-charts/" target="_blank" class="px-4 py-2 rounded-full bg-[#a1866f] text-white font-semibold shadow hover:bg-[#6b4f36] transition">Make a Chart</a>
+          </div>
+          <!-- Activity 3 -->
+          <div class="slide-card bg-[#e9e3db] rounded-xl p-4 flex flex-col items-center shadow-md hover:shadow-xl transition-all duration-200">
+            <img src="https://cdn.pixabay.com/photo/2017/06/10/07/18/stop-2389219_1280.png" alt="Pause Challenge" class="w-24 h-24 mb-2 rounded-full object-cover">
+            <h3 class="text-lg text-[#a1866f] font-semibold mb-1">Pause Challenge</h3>
+            <p class="text-sm text-[#6b4f36] mb-2 text-center">Practice the "Pause Rule": Stop and check in before you scroll or react.</p>
+            <a href="pause.html" class="px-4 py-2 rounded-full bg-[#a1866f] text-white font-semibold shadow hover:bg-[#6b4f36] transition">Try the Pause</a>
+          </div>
+        </div>
+      </section>
+
+
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#6b4f36] text-white text-center py-6 rounded-t-2xl mt-12">
+    <div class="container mx-auto">
+      <p>Contact | Privacy Policy | Social Links</p>
+    </div>
+  </footer>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+
+    // Slides for digital wellness concepts
+    const slides = [
+      {
+        img: "https://cdn.pixabay.com/photo/2017/01/31/13/14/brain-2029366_1280.png",
+        title: "Digital Habits = Daily Habits",
+        text: "Just like eating or exercising, your digital habits affect your mood and energy. Too much 'junk' can make you feel bad!"
+      },
+      {
+        img: "https://cdn.pixabay.com/photo/2016/03/31/19/56/pie-chart-1292311_1280.png",
+        title: "Balance Your Digital Diet",
+        text: "Some apps nourish you, others drain you. Try to create a balanced 'digital plate'—mix fun, learning, and connection."
+      },
+      {
+        img: "https://cdn.pixabay.com/photo/2017/06/10/07/18/stop-2389219_1280.png",
+        title: "The Pause Rule",
+        text: "Before you scroll or react, pause and ask: 'How does this make me feel?' Mindful scrolling = healthier habits."
+      },
+      {
+        img: "https://cdn.pixabay.com/photo/2017/08/06/00/03/people-2581913_1280.jpg",
+        title: "Boundaries = Self-Care",
+        text: "Set daily limits, curate your feed, and follow accounts that inspire you. Boundaries help you thrive online."
+      },
+      {
+        img: "https://cdn.pixabay.com/photo/2017/01/10/19/05/phone-1976107_1280.jpg",
+        title: "Leverage Tech for Good",
+        text: "Use tools like Screen Time or Digital Wellbeing. Try apps like Forest or Focus@Will to help you stay balanced."
+      },
+      {
+        img: "https://cdn.pixabay.com/photo/2016/11/29/09/32/people-1867703_1280.jpg",
+        title: "Share & Reflect",
+        text: "Talk with friends or family about your digital habits. Share stories and support each other’s wellness journey."
+      }
+    ];
+
+    let currentSlide = 0;
+    const slideContainer = document.getElementById('slide-container');
+    const prevBtn = document.getElementById('prev-slide');
+    const nextBtn = document.getElementById('next-slide');
+
+    function renderSlide(idx) {
+      const slide = slides[idx];
+      slideContainer.innerHTML = `
+        <div class="slide-card bg-[#e9e3db] rounded-xl p-6 flex flex-col items-center shadow-md fade-in-up active w-full max-w-md">
+          <img src="${slide.img}" alt="${slide.title}" class="w-32 h-32 mb-4 rounded-full object-cover shadow">
+          <h3 class="text-xl text-[#a1866f] font-bold mb-2 text-center">${slide.title}</h3>
+          <p class="text-[#6b4f36] text-base text-center">${slide.text}</p>
+        </div>
+        <div class="mt-4 text-sm text-[#a1866f]">${idx + 1} / ${slides.length}</div>
+      `;
+    }
+
+    prevBtn.onclick = () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      renderSlide(currentSlide);
+    };
+    nextBtn.onclick = () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      renderSlide(currentSlide);
+    };
+
+    renderSlide(currentSlide);
+  </script>
+</body>
+</html>
