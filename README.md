@@ -2,7 +2,7 @@
 
 Welcome to **Bloomingage** – a digital wellness toolkit and interactive resource for teens to build healthy digital habits, emotional intelligence, and life skills.
 
-## 🌱 What is Bloomingage?
+##  What is Bloomingage?
 
 Bloomingage is a web-based platform designed to help young people:
 - Reflect on their digital habits
@@ -11,7 +11,7 @@ Bloomingage is a web-based platform designed to help young people:
 - Read real peer stories
 - Build a toolkit for lifelong well-being
 
-## 🚀 Features
+##  Features
 
 - **Digital Detox Plan:** Step-by-step guide to mindful social media use
 - **Pattern Spotter Game:** Interactive game to spot emotional patterns online
@@ -20,7 +20,7 @@ Bloomingage is a web-based platform designed to help young people:
 - **Peer Stories:** Carousel of real teen experiences and tips
 - **Beautiful, accessible design** with animations and mobile support
 
-## 📂 Pages
+##  Pages
 
 - `index.html` – Home
 - `detox.html` – Digital Detox Plan
@@ -30,7 +30,7 @@ Bloomingage is a web-based platform designed to help young people:
 - `stories.html` – Peer Stories
 - `toolkit.html` – Digital Wellness Toolkit
 
-## 🛠️ How to Use
+##  How to Use
 
 1. Clone or download this repo:
    ```sh
@@ -39,7 +39,7 @@ Bloomingage is a web-based platform designed to help young people:
 2. Open any `.html` file in your browser.
 3. Explore the interactive activities and resources!
 
-## 🌐 Live Demo
+##  Live Demo
 
 If GitHub Pages is enabled, visit:  
 https://bellawareness.github.io/Blooming/
@@ -54,11 +54,4 @@ _Add screenshots of your favorite pages here!_
 - Icons and images from [Pixabay](https://pixabay.com/) and [Unsplash](https://unsplash.com/)
 - Built with [Tailwind CSS](https://tailwindcss.com/)
 
-## 📧 Contact
 
-Questions or feedback?  
-Email: info@bloomingwellness.com
-
----
-
-**Bloomingage** – Grow your digital wellness, one
