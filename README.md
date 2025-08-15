@@ -1,6 +1,6 @@
 # Bloomingage
 
-Welcome to **Bloomingage** – a digital wellness toolkit and interactive resource for teens to build healthy digital habits, emotional intelligence, and life skills.
+A digital wellness toolkit and interactive resource for teens to build healthy digital habits, emotional intelligence, and life skills.
 
 ##  What is Bloomingage?
 
@@ -41,15 +41,13 @@ Bloomingage is a web-based platform designed to help young people:
 
 ##  Live Demo
 
-If GitHub Pages is enabled, visit:  
 https://bellawareness.github.io/Blooming/
 
-## 📸 Screenshots
+##  Screenshots
 
-_Add screenshots of your favorite pages here!_
 
-## 🙌 Credits
-
+##  Credits
+- ChatGpt, Visual Studio, Canva
 - Infographic by Justin Wright
 - Icons and images from [Pixabay](https://pixabay.com/) and [Unsplash](https://unsplash.com/)
 - Built with [Tailwind CSS](https://tailwindcss.com/)
